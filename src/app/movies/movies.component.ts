@@ -3,6 +3,7 @@ import { FavMovies } from '../My_Movies';
 import { NgFor,NgIf } from '@angular/common';
 import { movies } from './movies';
 import { MoviesDetailsComponent } from '../movies-details/movies-details.component';
+import { MoviesService } from '../movies.service';
 @Component({
   selector: 'app-movies',
   standalone: true,
@@ -11,8 +12,15 @@ import { MoviesDetailsComponent } from '../movies-details/movies-details.compone
   styleUrl: './movies.component.css'
 })
 export class MoviesComponent {
-  movies1=FavMovies
-  
+  // movies1=FavMovies
+  movies:movies[]=[];
+  constructor(private movieservice:MoviesService){}
+  ngOnInit():void{
+     this.getMovies();
+  }
+  getMovies():void{
+    this.movieservice.getMovies().subscribe(movie=>this.movies=movie)
+  }
   selectedmovie?:movies
   onSelect(m:movies):void{
     this.selectedmovie=m;
