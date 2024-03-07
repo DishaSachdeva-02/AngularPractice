@@ -1,0 +1,17 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 15px;
+}
+input{
+    padding: 7px;
+    color: rgb(145, 0, 145);
+    font-style: italic;
+}

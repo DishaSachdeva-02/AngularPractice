@@ -1,9 +1,17 @@
 
-<div>
-    <ul>
-        <li *ngFor="let moviename of movies">
-            <span>{{moviename.name}}  </span>
-            <span>{{moviename.ReleaseYear}} </span>
+<div class="buttons">
+    <ul type="none">
+        <li *ngFor="let moviename of movies1">
+            <button type="button" (click)="onSelect(moviename)">
+                <span>{{moviename.name}}  </span>
+                <span>{{moviename.ReleaseYear}} </span>
+            </button>
+            
         </li>
     </ul>
 </div>
+
+<div>
+    <h2 *ngIf="selectedmovie">Movie {{selectedmovie.id}} Details</h2>
+</div>
+<app-movies-details [mymovie]="selectedmovie"></app-movies-details>

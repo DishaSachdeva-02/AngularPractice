@@ -1,4 +1,5 @@
 export interface movies{
     name:string,
-    ReleaseYear:number
+    ReleaseYear:number,
+    id:number
 }

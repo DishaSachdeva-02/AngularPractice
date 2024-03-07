@@ -1,0 +1,12 @@
+<div class="main">
+    <div class="details" *ngIf="mymovie">
+        <div>
+            <label for="name">Name : </label>
+            <input id="name" type="text" [(ngModel)]="mymovie.name">
+        </div>
+        <div>
+            <label for="year">Release Year : </label>
+            <input id="year" type="number" [(ngModel)]="mymovie.ReleaseYear">
+        </div>
+    </div>
+</div>
