@@ -4,6 +4,7 @@ import { NgFor,NgIf } from '@angular/common';
 import { movies } from './movies';
 import { MoviesDetailsComponent } from '../movies-details/movies-details.component';
 import { MoviesService } from '../movies.service';
+import { MessageService } from '../message.service';
 @Component({
   selector: 'app-movies',
   standalone: true,
@@ -14,7 +15,7 @@ import { MoviesService } from '../movies.service';
 export class MoviesComponent {
   // movies1=FavMovies
   movies:movies[]=[];
-  constructor(private movieservice:MoviesService){}
+  constructor(private movieservice:MoviesService,private messageservice:MessageService){}
   ngOnInit():void{
      this.getMovies();
   }
@@ -24,6 +25,7 @@ export class MoviesComponent {
   selectedmovie?:movies
   onSelect(m:movies):void{
     this.selectedmovie=m;
+    this.messageservice.add(`You clicked on movie ${m.id} name ${m.name}`)
   }
 
 }
