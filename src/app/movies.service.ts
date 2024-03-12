@@ -14,4 +14,10 @@ export class MoviesService {
     this.messageservice.add("All the movies are displayed....");
     return message;
   }
+  getMov(id:number):Observable<movies>{
+    const movie=FavMovies.find(mov=>mov.id===id)!;
+    this.messageservice.add(`Selected movie is ${id}`);
+    return of(movie);
+  }
+  
 }

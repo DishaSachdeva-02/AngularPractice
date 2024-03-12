@@ -1,6 +1,9 @@
 <div class="main">
     <div class="details" *ngIf="mymovie">
         <div>
+            <h2 *ngIf="mymovie">Movie {{mymovie.id}} Details</h2>
+        </div>
+        <div>
             <label for="name">Name : </label>
             <input id="name" type="text" [(ngModel)]="mymovie.name">
         </div>
@@ -9,4 +12,5 @@
             <input id="year" type="number" [(ngModel)]="mymovie.ReleaseYear">
         </div>
     </div>
+    <button type="button" (click)="goback()">Back</button>
 </div>

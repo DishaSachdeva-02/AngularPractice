@@ -5,10 +5,11 @@ import { movies } from './movies';
 import { MoviesDetailsComponent } from '../movies-details/movies-details.component';
 import { MoviesService } from '../movies.service';
 import { MessageService } from '../message.service';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-movies',
   standalone: true,
-  imports: [NgFor,NgIf,MoviesDetailsComponent],
+  imports: [NgFor,NgIf,MoviesDetailsComponent,RouterModule],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.css'
 })
