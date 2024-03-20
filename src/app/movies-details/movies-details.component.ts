@@ -26,4 +26,9 @@ export class MoviesDetailsComponent {
    goback(){
       this.loaction.back();
    }
+   save(){
+     if(this.mymovie){
+      this.movieservice.updateMovie(this.mymovie).subscribe(()=>this.goback());
+     }
+   }
 }

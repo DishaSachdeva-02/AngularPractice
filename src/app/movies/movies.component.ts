@@ -28,5 +28,14 @@ export class MoviesComponent {
     this.selectedmovie=m;
     this.messageservice.add(`You clicked on movie ${m.id} name ${m.name}`)
   }
-
+  add(name:string){
+    if(name){
+      name=name.trim();
+    }
+    this.movieservice.add({name} as movies).subscribe(m=>this.movies.push(m));
+  }
+  delete(movie:movies){
+    this.movies=this.movies.filter(m=>m!=movie);
+     this.movieservice.delete(movie.id).subscribe();
+  }
 }

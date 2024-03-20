@@ -6,9 +6,12 @@
                 <span>{{moviename.name}}  </span>
                 <span>{{moviename.ReleaseYear}} </span>
            </a>
-            
+           <button type="button" (click)="delete(moviename)">Delete</button>
         </li>
     </ul>
+    <label for="name">Movie Nmae:</label>
+    <input type="text" #moviename placeholder="Type movie...">
+    <button type="button" (click)="add(moviename.value) ; moviename.value='' ">Add</button>
 </div>
 
 
