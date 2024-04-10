@@ -2,5 +2,20 @@
 <a routerLink="/movies">My movies</a>
 <br>
 <a routerLink="/dashboard">Dashboard</a>
+<button type="button"><a routerLink="/addnews">Add New News</a></button>
+    <div>
+      <label for="search">Search..</label>
+      <input type="text" id="search" #newssearch (input)="search(newssearch.value)">
+    </div>
+<div>
+    <ul>
+        <li *ngFor="let ms of movies$ | async">
+          <p>{{ms.id}}</p>
+          <a routerLink="/detail/{{ms.id}}">{{ms.name}}</a>
+          
+        </li>
+      </ul>
+</div>
+    
 <router-outlet></router-outlet>
 <app-message></app-message>
